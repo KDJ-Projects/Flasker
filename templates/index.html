@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <link rel="stylesheet" href="{{url_for("static", filename="/css/style.css")}}">
+</head>
+<body>
+    <h1>Hello {{ first_name }}</h1>
+    <p>{{ stuff | safe }}</p>
+    <h3>Favorite pizza:</h3>
+    {% for topping in favorit_pizza %}
+        <ul>
+            <li>{{ topping }}</li>
+        </ul> 
+    {% endfor %}
+
+    <p>I like {{ favorit_pizza[0] }} pizza</p>
+</body>
+</html>
